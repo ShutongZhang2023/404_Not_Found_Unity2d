@@ -40,7 +40,7 @@ public class Level3PuzzleManager : MonoBehaviour, IPuzzleManager
     public float verticalSpacing = 1.0f;
 
     // ‘À––Ã¨
-    private Word[,] grid;
+    protected Word[,] grid;
     private List<Word> currentSelection = new();
     private Vector2Int? startPos = null;
     private Vector2Int? currentMousePos = null;
@@ -57,11 +57,11 @@ public class Level3PuzzleManager : MonoBehaviour, IPuzzleManager
         RebuildSpriteDictionaries();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         GenerateGrid();
-        PlaceWordsManually();
         FillRandomLetters();
+        PlaceWordsManually();
     }
 
     private void RebuildSpriteDictionaries() {
@@ -106,10 +106,10 @@ public class Level3PuzzleManager : MonoBehaviour, IPuzzleManager
         }
     }
 
-    private Sprite GetDefaultSprite(char ch) => defaultDict.TryGetValue(ch, out var s) ? s : null;
-    private Sprite GetActiveSprite(char ch) => activeDict.TryGetValue(ch, out var s) ? s : GetDefaultSprite(ch);
+    protected Sprite GetDefaultSprite(char ch) => defaultDict.TryGetValue(ch, out var s) ? s : null;
+    protected Sprite GetActiveSprite(char ch) => activeDict.TryGetValue(ch, out var s) ? s : GetDefaultSprite(ch);
 
-    private void GenerateGrid()
+    protected void GenerateGrid()
     {
         grid = new Word[rows, cols];
         for (int r = 0; r < rows; r++)
@@ -126,7 +126,7 @@ public class Level3PuzzleManager : MonoBehaviour, IPuzzleManager
         }
     }
 
-    void PlaceWordsManually()
+    protected void PlaceWordsManually()
     {
         foreach (var placement in wordPlacements)
         {
@@ -147,7 +147,7 @@ public class Level3PuzzleManager : MonoBehaviour, IPuzzleManager
         }
     }
 
-    void FillRandomLetters()
+    protected void FillRandomLetters()
     {
         for (int r = 0; r < rows; r++)
         {

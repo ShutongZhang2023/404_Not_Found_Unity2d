@@ -14,12 +14,12 @@ public class DraggableWord : MonoBehaviour
     private Camera cam;
     private Material mat;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         mat = GetComponent<Renderer>().material;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         cam = Camera.main;
         originalPosition = transform.position;

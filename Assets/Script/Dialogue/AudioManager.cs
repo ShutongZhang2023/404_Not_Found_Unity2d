@@ -20,6 +20,9 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Clips")]
     public AudioClip typeClip;
     public AudioClip tearClip;
+    public AudioClip hammerClip;
+    public AudioClip hitGroundClip;
+    public AudioClip hitEachOtherClip;
 
     void Awake()
     {
@@ -65,5 +68,20 @@ public class AudioManager : MonoBehaviour
 
     public void PlayTearSFX() { 
         sfxSource.PlayOneShot(tearClip);
+    }
+
+    public void PlayHammerSFX()
+    {
+        sfxSource.PlayOneShot(hammerClip);
+    }
+
+    public void PlayHitGroundSFX()
+    {
+        sfxSource.PlayOneShot(hitGroundClip);
+    }
+
+    public void PlayHitEachOtherSFX()
+    {
+        sfxSource.PlayOneShot(hitEachOtherClip);
     }
 }

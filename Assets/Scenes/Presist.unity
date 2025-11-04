@@ -1788,6 +1788,7 @@ MonoBehaviour:
   - Level3
   - Level4
   - Level5
+  - Level6
   fadePanel: {fileID: 1964042720}
   fadeDuration: 2
   currentLanguage: 0
@@ -1842,6 +1843,9 @@ MonoBehaviour:
   level0BGM: {fileID: 8300000, guid: 5a499962e07a45e42ba28e0c4df517ff, type: 3}
   typeClip: {fileID: 8300000, guid: 24a5cd5765edddf4e86b82f847df8185, type: 3}
   tearClip: {fileID: 8300000, guid: 050db37a6f90de647bd8246becaa74c3, type: 3}
+  hammerClip: {fileID: 8300000, guid: 4c8723f66dc0e61458baab4d148b0529, type: 3}
+  hitGroundClip: {fileID: 8300000, guid: 5dc4f7614027a534f88f60b8151b1a58, type: 3}
+  hitEachOtherClip: {fileID: 8300000, guid: 4ca4eb6f543f3f4428d957b30ffb3563, type: 3}
 --- !u!82 &1317488802
 AudioSource:
   m_ObjectHideFlags: 0
